@@ -19,7 +19,7 @@ class Todo(db.Model):
 with app.app_context():
     db.create_all()
 
-# Ajouter une tâche
+# Ajouter une tâche .
 @app.route('/todos', methods=['POST'])
 def create_todo():
     data = request.json
