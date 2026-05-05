@@ -19,7 +19,7 @@ class Todo(db.Model):
 with app.app_context():
     db.create_all()
 
-# ➕ Ajouter une tâche
+# Ajouter une tâche
 @app.route('/todos', methods=['POST'])
 def create_todo():
     data = request.json
@@ -28,7 +28,7 @@ def create_todo():
     db.session.commit()
     return jsonify({'id': todo.id, 'title': todo.title, 'completed': todo.completed})
 
-# 📥 Récupérer toutes les tâches
+# Récupérer toutes les tâches
 @app.route('/todos', methods=['GET'])
 def get_todos():
     todos = Todo.query.all()
@@ -55,7 +55,7 @@ def update_todo(id):
     db.session.commit()
     return jsonify({'message': 'updated'})
 
-# ❌ Supprimer une tâche
+# Supprimer une tâche
 @app.route('/todos/<int:id>', methods=['DELETE'])
 def delete_todo(id):
     todo = Todo.query.get_or_404(id)
