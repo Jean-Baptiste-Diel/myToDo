@@ -56,12 +56,12 @@ def update_todo(id):
     return jsonify({'message': 'updated'})
 
 # Supprimer une tâche
-@app.route('/todos/<int:id>', methods=['DELETE'])
-def delete_todo(id):
-    todo = Todo.query.get_or_404(id)
-    db.session.delete(todo)
-    db.session.commit()
-    return jsonify({'message': 'deleted'})
+# @app.route('/todos/<int:id>', methods=['DELETE'])
+# def delete_todo(id):
+#     todo = Todo.query.get_or_404(id)
+#     db.session.delete(todo)
+#     db.session.commit()
+#     return jsonify({'message': 'deleted'})
 
 if __name__ == '__main__':
     app.run(debug=True)
