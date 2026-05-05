@@ -37,13 +37,13 @@ def get_todos():
         for t in todos
     ])
 
-# 🔍 Récupérer une tâche
+# Récupérer une tâche
 @app.route('/todos/<int:id>', methods=['GET'])
 def get_todo(id):
     todo = Todo.query.get_or_404(id)
     return jsonify({'id': todo.id, 'title': todo.title, 'completed': todo.completed})
 
-# ✏️ Modifier une tâche
+# Modifier une tâche
 @app.route('/todos/<int:id>', methods=['PUT'])
 def update_todo(id):
     todo = Todo.query.get_or_404(id)
