@@ -1,0 +1,18 @@
+# environnement virtuel
+.venv/
+.env
+
+# fichiers Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# fichiers inutiles système
+.DS_Store
+
+# dossiers non nécessaires
+External librairies/
+Scratches and Consoles/
