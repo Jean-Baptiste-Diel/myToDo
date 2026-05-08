@@ -19,6 +19,18 @@ class Todo(db.Model):
 with app.app_context():
     db.create_all()
 
+@app.route("/", methods=['GET'])
+def index():
+    routes = []
+
+    for rule in app.url_map.iter_rules():
+        routes.append({
+            "endpoint": rule.endpoint,
+            "methods": list(rule.methods),
+            "path": str(rule)
+        })
+
+    return jsonify(routes)
 # Ajouter une tâche .
 @app.route('/todos', methods=['POST'])
 def create_todo():
